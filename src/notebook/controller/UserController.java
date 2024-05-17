@@ -35,4 +35,8 @@ public class UserController {
     public List<User> readAll (){
         return repository.findAll();
     }
+
+    public void deleteUser(String userId) {
+        repository.delete(Long.parseLong(userId));
+    }
 }

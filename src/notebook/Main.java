@@ -1,9 +1,12 @@
 package notebook;
 
 import notebook.controller.UserController;
+import notebook.model.User;
 import notebook.model.repository.GBRepository;
 import notebook.model.repository.impl.UserRepository;
 import notebook.view.UserView;
+
+import java.util.List;
 
 import static notebook.util.DBConnector.DB_PATH;
 import static notebook.util.DBConnector.createDB;
@@ -15,6 +18,7 @@ public class Main {
         UserController controller = new UserController(repository);
         UserView view = new UserView(controller);
         view.run();
+        List<User> users = repository.findAll();
 
     }
 }
