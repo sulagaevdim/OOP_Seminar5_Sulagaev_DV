@@ -2,7 +2,6 @@ package notebook.view;
 
 import notebook.controller.UserController;
 import notebook.model.User;
-import notebook.model.dao.impl.FileOperation;
 import notebook.util.Commands;
 
 import java.util.Scanner;
