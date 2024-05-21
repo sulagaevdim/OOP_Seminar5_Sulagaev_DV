@@ -39,4 +39,11 @@ public class UserController {
     public void deleteUser(String userId) {
         repository.delete(Long.parseLong(userId));
     }
+
+    public String prompt(String message) {
+        return repository.prompt(message);
+    }
+    public User createUser() {
+        return repository.createUser();
+    };
 }

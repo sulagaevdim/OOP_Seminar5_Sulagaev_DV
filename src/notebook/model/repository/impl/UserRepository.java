@@ -11,6 +11,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Scanner;
 
 public class UserRepository implements GBRepository {
     private final UserMapper mapper;
@@ -133,5 +134,16 @@ public class UserRepository implements GBRepository {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+    }
+    public User createUser() {
+        String firstName = prompt("Имя: ");
+        String lastName = prompt("Фамилия: ");
+        String phone = prompt("Номер телефона: ");
+        return new User(firstName, lastName, phone);
+    }
+    public String prompt(String message) {
+        Scanner in = new Scanner(System.in);
+        System.out.print(message);
+        return in.nextLine();
     }
 }
