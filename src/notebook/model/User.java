@@ -49,8 +49,12 @@ public class User {
         this.phone = phone;
     }
 
+    public void changeIdAfterDeletion() {
+        id = id - 1;
+    }
+
     @Override
     public String toString() {
-        return String.format("Идентификатор: %s\nИмя: %s,\nФамилия: %s,\nТелефон: %s", id, firstName, lastName, phone);
+        return String.format("Идентификатор: %s\nИмя: %s,\nФамилия: %s,\nТелефон: %s\n", id, firstName, lastName, phone);
     }
 }

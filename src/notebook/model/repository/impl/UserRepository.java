@@ -79,6 +79,13 @@ public class UserRepository implements GBRepository {
                         .equals(userId))
                 .findFirst().orElseThrow(() -> new RuntimeException("User not found"));
         users.remove(userId.intValue() - 1);
+        if ((userId.intValue() - 1) < users.size()) {
+            System.out.println((userId.intValue()) + " " + (users.size()));
+            for (int i = userId.intValue() - 1; i < users.size(); i++) {
+                System.out.println("ЫЫЫ");
+                users.get(i).changeIdAfterDeletion();
+            }
+        }
         write(users);
         return false;
     }
